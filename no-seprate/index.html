@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <input name="a" value="">
+      +
+      <input name="b" value="">
+      <button type="submit" onclick="cal">提交</button>
+    </form>
+  </body>
+  <script>
+    function cal(){
+      var inputs = document.forms[0].getElementsByTagName('input');
+      axios.get('/', {
+      params: {
+        a:inputs[0].value,
+        b:inputs[1].value,
+      }
+    }).then((response) => {
+      console.log(response)
+    });
+    }
+  </script>
+</html>
